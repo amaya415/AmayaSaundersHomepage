@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaya Saunders | Computational Linguistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --heading-blue: #2B547E;
+            --bg-cream: #FAFAF8;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --border-light: #e0e0e0;
+            --skill-bg: #F0EFE9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-cream);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--heading-blue);
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .contact-info a {
+            color: var(--heading-blue);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info span {
+            margin: 0 8px;
+            color: var(--border-light);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--heading-blue);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--heading-blue);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--heading-blue);
+            color: white;
+        }
+
+        /* Intro */
+        .intro {
+            text-align: center;
+            margin-bottom: 48px;
+            font-size: 1.15rem;
+            color: var(--text-gray);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--heading-blue);
+            border-bottom: 2px solid var(--heading-blue);
+            padding-bottom: 6px;
+            margin-bottom: 20px;
+        }
+
+        /* Entry */
+        .entry {
+            margin-bottom: 24px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            color: var(--heading-blue);
+        }
+
+        .entry-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .entry-subtitle {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+
+        .entry ul {
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+
+        .entry li {
+            margin-bottom: 4px;
+        }
+
+        /* Subsection headers */
+        .subsection {
+            font-weight: 600;
+            font-style: italic;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        /* Publications / Talks - no bullets */
+        .publication, .talk {
+            margin-bottom: 12px;
+        }
+
+        .publication strong, .talk strong {
+            font-weight: 600;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .skill-box {
+            background-color: var(--skill-bg);
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .skill-box h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--heading-blue);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-box p {
+            font-size: 0.95rem;
+        }
+
+        /* Languages inline */
+        .languages p {
+            margin-bottom: 4px;
+        }
+
+        .languages strong {
+            color: var(--heading-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Amaya Saunders</h1>
+            <div class="contact-info">
+                <a href="mailto:amaya415@uw.edu">amaya415@uw.edu</a>
+                <span>|</span>
+                <a href="tel:+1-360-265-0945">360-265-0945</a>
+                <span>|</span>
+                Seattle, Washington
+            </div>
+            <nav>
+                <a href="#research">Research</a>
+                <a href="#publications">Publications</a>
+                <a href="#talks">Talks</a>
+                <a href="cv_amaya.pdf" target="_blank">Download CV</a>
+            </nav>
+        </header>
+
+        <p class="intro">
+            Undergraduate researcher in computational linguistics at the University of Washington. 
+            Focused on speech technology, phonetics, and building tools that work for all speakers.
+        </p>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">University of Washington</span>
+                    <span class="entry-date">Sept 2022 – June 2026</span>
+                </div>
+                <div class="entry-subtitle">BA in Linguistics with Departmental Honors</div>
+                <ul>
+                    <li>GPA: 3.82/4.0 (in-major 3.91)</li>
+                    <li><strong>Linguistics:</strong> Phonetics, Phonology I, Syntax I & II, Introduction to Computational Linguistics</li>
+                    <li><strong>Computer Science:</strong> Data Structures & Algorithms, Machine Learning</li>
+                    <li><strong>Math:</strong> Calculus I–III, Matrix Algebra, Probability I</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Research Experience -->
+        <section id="research">
+            <h2>Research Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Honors Thesis: Serbo-Croatian Palatalization</span>
+                    <span class="entry-date">2025 – Present</span>
+                </div>
+                <div class="entry-subtitle">Advisor: Dr. Richard Wright · University of Washington</div>
+                <ul>
+                    <li>Conducted fieldwork in Serbia and Croatia, collecting speech data from Ekavian and Ijekavian dialect speakers.</li>
+                    <li>Applied forced alignment to analyze phone segmentation, revealing systematic palatalization differences across dialects.</li>
+                    <li>Identified limitations of standard forced aligners for dialectal variation, informing best practices for low-resource speech processing.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Mixtec (Tu'un Savi) Dictionary Project</span>
+                    <span class="entry-date">2024 – Present</span>
+                </div>
+                <div class="entry-subtitle">Advisor: Dr. Andrew Hedding · University of Washington</div>
+                <ul>
+                    <li>Documented tonal structure and syntax through fieldwork with native speakers, contributing to language preservation efforts.</li>
+                    <li>Transcribed dictionary entries using narrow IPA and recorded audio for an open-access community resource.</li>
+                    <li>Developed PHP scripts to process and display dictionary data, improving web interface functionality.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Bias in Automatic Speech Recognition</span>
+                    <span class="entry-date">2024 – Present</span>
+                </div>
+                <div class="entry-subtitle">Advisor: Dr. Alicia Wassink · UW Sociolinguistics Laboratory</div>
+                <ul>
+                    <li>Analyzed ASR system performance across Gulf Coast English dialect speakers, identifying systematic recognition failures.</li>
+                    <li>Documented racial and dialectal bias in automatic speech recognition, contributing to equity-focused research.</li>
+                    <li>Presented findings demonstrating how sociolinguistic variation is unaccounted for in commercial speech technology.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Variation in Implosive and Ejective Consonants</span>
+                    <span class="entry-date">2024 – 2025</span>
+                </div>
+                <div class="entry-subtitle">Advisor: Dr. Richard Wright · UW Phonetics Laboratory</div>
+                <ul>
+                    <li>Examined acoustic variation in implosives (Swahili, Hausa) and ejectives (Georgian) using large-scale corpus data.</li>
+                    <li>Hand-corrected Montreal Forced Aligner outputs for non-pulmonic consonants, improving segmentation accuracy.</li>
+                    <li>Co-authored book chapter demonstrating significant variation from canonical phonetic descriptions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <p class="publication">
+                Wright, R., Tucker, B. V., Ahn, E. P., Rae, B., & <strong>Saunders, A.</strong> (in preparation). 
+                Variation in glottalic consonants. <em>Manuscript in preparation.</em>
+            </p>
+        </section>
+
+        <!-- Talks -->
+        <section id="talks">
+            <h2>Talks</h2>
+
+            <p class="subsection">Forthcoming</p>
+
+            <p class="talk">
+                <strong>Saunders, A.</strong> (May 2026). Palatalization Contrasts in Two Serbo-Croatian Dialects. 
+                <em>2026 UW Undergraduate Research Symposium.</em> Seattle, Washington.
+            </p>
+            <p class="talk">
+                Kaikkonen, H., <strong>Saunders, A.</strong> (May 2026). San Martín Peras Mixtec Dictionary Project. 
+                <em>2026 UW Undergraduate Research Symposium.</em> Seattle, Washington.
+            </p>
+            <p class="talk">
+                Fajardo, M., <strong>Saunders, A.</strong> (May 2026). A Sociophonetic Evaluation of Mississippi Gulf Coast English. 
+                <em>2026 UW Undergraduate Research Symposium.</em> Seattle, Washington.
+            </p>
+
+            <p class="subsection">Past</p>
+
+            <p class="talk">
+                Rae, B., Osborn, C., & <strong>Saunders, A.</strong> (May 2025). Implosive Variability in Central African Languages. 
+                <em>2025 UW Undergraduate Research Symposium.</em> Seattle, Washington.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>Methods</h3>
+                    <p>Fieldwork, acoustic/spectrographic analysis, forced alignment, sociolinguistic interviews, generative syntax, mixed-effects regression, ANOVA</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Tools</h3>
+                    <p>Praat, Montreal Forced Aligner, ELAN, Python, R, Java, PHP, LaTeX, SQL</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section id="languages" class="languages">
+            <h2>Languages</h2>
+            <p><strong>Native:</strong> English</p>
+            <p><strong>Working Proficiency:</strong> Spanish</p>
+            <p><strong>Research Proficiency:</strong> Serbo-Croatian, ASL</p>
+        </section>
+
+        <footer>
+            © 2026 Amaya Saunders
+        </footer>
+    </div>
+</body>
+</html>
